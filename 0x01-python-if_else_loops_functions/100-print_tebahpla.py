@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-print("".join('{}{}'.format(chr((char + 1) + 32), chr(char))
-              for char in range(65, 91, 2)[::-1]), end='')
+for i in range(122, 96, -1):
+    if i % 2 != 0:
+        i -= 32
+    print("{:c}".format(i), end='')

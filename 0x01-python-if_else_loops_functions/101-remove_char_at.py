@@ -1,4 +1,8 @@
 #!/usr/bin/python3
 def remove_char_at(str, n):
-    copy_str = str
-    return "".join([char for char in copy_str if copy_str.index(char) != n])
+    newStr = ""
+    for i in range(len(str)):
+        if i == n:
+            continue
+        newStr += str[i]
+    return newStr
