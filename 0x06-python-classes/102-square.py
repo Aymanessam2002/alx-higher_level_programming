@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-"""Square module."""
+"""My square module"""
 
 
 class Square:
-    """Defines a square."""
+    """defines a square"""
 
     def __init__(self, size=0):
-        """Constructor.
-
-        Args:
-            size: Length of a side of the square.
+        """Create a Square
+        Args: size: length of a side of Square
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
-        """Property for the length of a side of this square.
-
+        """"The propery of size as the len of a side of Square
         Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+            TypeError: if size != int
+            ValueErrorr: if size < 0
         """
         return self.__size
 
@@ -32,15 +29,19 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Area of this square.
-
-        Returns:
-            The size squared.
+        """Get the area of a Square
+        Returns: The size squared
         """
-        return self.__size ** 2
+        return self.__size * self.__size
 
-    def __eq__(self, other):
-        return self.area() == other.area()
+    def __le__(self, other):
+        return self.area() <= other.area()
+
+    def __lt__(self, other):
+        return self.area() < other.area()
+
+    def __ge__(self, other):
+        return self.area() >= other.area()
 
     def __ne__(self, other):
         return self.area() != other.area()
@@ -48,11 +49,5 @@ class Square:
     def __gt__(self, other):
         return self.area() > other.area()
 
-    def __ge__(self, other):
-        return self.area() >= other.area()
-
-    def __lt__(self, other):
-        return self.area() < other.area()
-
-    def __le__(self, other):
-        return self.area() <= other.area()
+    def __eq__(self, other):
+        return self.area() == other.area()
