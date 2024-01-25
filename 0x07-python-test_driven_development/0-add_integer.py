@@ -1,35 +1,26 @@
 #!/usr/bin/python3
-"""Defines an integer addition function."""
+"""
 
+This module has one function that adds up 2 integers
 
-def _add(x, y):
-    add = int(x) + int(y) if isinstance(x, float)\
-        or isinstance(y, float) else x + y
-    return add
+"""
 
 
 def add_integer(a, b=98):
-    """Adds two integers.
+    """Return the sum of two integers or floats as integers
 
     Args:
-        a: first int.
-        b: second int, default value is 98.
-
-    Raises:
-        TypeError: if a, b are neither int nor float.
+        a: first argument
+        b: second argument
 
     Returns:
-        sum of a and b.
+        Sum of the two arguments
+
+    Raises:
+        TypeError: If either of the arguments not an integer or a float
     """
-
-    if not isinstance(a, (int, float)):
+    if ((not isinstance(a, int) and not isinstance(a, float))):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if ((not isinstance(b, int) and not isinstance(b, float))):
         raise TypeError("b must be an integer")
-    result = _add(a, b)
-    return result
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/0-add_integer.txt")
+    return (int(a) + int(b))
