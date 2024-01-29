@@ -1,11 +1,17 @@
 #!/usr/bin/node
-let i = 0;
-const number = Number(process.argv[2]);
-if (number) {
-  while (i < number) {
-    console.log(Array(number + 1).join('X'));
-    i++;
-  }
-} else {
+const x = process.argv[2];
+
+if (!parseInt(x)) {
   console.log('Missing size');
+} else {
+  for (let i = 0; i < x; i++) {
+    let y = 0;
+    let myVar = '';
+
+    while (y < x) {
+      myVar = myVar + 'X';
+      y++;
+    }
+    console.log(myVar);
+  }
 }
